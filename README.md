@@ -1,6 +1,6 @@
 # Dotfiles
 
-These are dotfiles I use for my Linux development environment (currently debian)
+These are dotfiles I use for my Linux development environment (currently arch)
 
 ## Requirements
 
@@ -9,13 +9,13 @@ Ensure you have the following installed:
 ### Git
 
 ```sh
-apt-get install git
+pacman -S git
 ```
 
 ### Stow
 
 ```sh
-apt-install stow
+pacman -S stow
 ```
 
 ## Installation

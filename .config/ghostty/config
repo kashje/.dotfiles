@@ -14,4 +14,4 @@ window-padding-balance = true
 window-save-state = always
 window-theme = ghostty
 
-# gtk-titlebar = false
+gtk-titlebar = false

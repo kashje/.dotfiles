@@ -1,0 +1,17 @@
+[global]
+format = "<b>%s</b>\n%b"
+
+icon_path = "~/.local/share/icons/"
+icon_theme = Adwaita
+max_icon_size = 64
+enable_recursive_icon_lookup = true
+
+origin = top-right
+offset = 22x22
+frame_width = 2
+frame_color = "#7AAC48"
+separator_color= frame
+font = "JetBrainsMono NerdFont 12"
+corner_radius = 7
+background = "#161616"
+foreground = "#F2F4F8"

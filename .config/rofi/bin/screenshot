@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+rofi_command="rofi -theme $HOME/.config/rofi/config/screenshot.rasi"
+
+time=`date +%Y-%m-%d-%I-%M-%S`
+dir="$HOME/Pictures/Screenshots"
+# Buttons
+layout=`cat $HOME/.config/rofi/config/screenshot.rasi | grep BUTTON | cut -d'=' -f2 | tr -d '[:blank:],*/'`
+if [[ "$layout" == "TRUE" ]]; then
+	area="󰩬 Area"
+	monitor="󰍹 Monitor"
+	window=" Window"
+else
+	area="󰩬 Area"
+	monitor="󰍹 Monitor"
+	window=" Window"
+fi
+
+if [[ ! -d "$dir" ]]; then
+	mkdir -p "$dir"
+fi
+
+# Variable passed to rofi
+options="$area\n$monitor\n$window"
+
+chosen="$(echo -e "$options" | $rofi_command -p 'Screenshot' -dmenu -selected-row 0)"
+case $chosen in
+    $area)
+	    hyprshot -m region -o $dir
+        ;;
+    $monitor)
+	    hyprshot -m output -o $dir
+        ;;
+    $window)
+	    hyprshot -m window -o $dir
+	;;
+esac
+
